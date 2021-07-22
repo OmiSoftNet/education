@@ -185,6 +185,7 @@
 4) [Git (Monster Lessons)](https://monsterlessons.com/project/categories/git) (rus)
 5) [Git in 15 minutes](https://try.github.io) (eng)
 6) [Learn Git in X minutes](https://learnxinyminutes.com/docs/git/) (eng)
+7) [Learn GIT branching](https://learngitbranching.js.org/?locale=uk) (ukr)
 
 ## Scrum
 1) [SCRUM — метод управления проектами. Обучающий мультик](https://www.youtube.com/watch?v=BHhr1aMgKPk) (rus)

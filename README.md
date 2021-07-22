@@ -201,6 +201,7 @@ You are always welcome to create [Pull Request](https://github.com/eresid/educat
 2) [Learn Git in X minutes](https://learnxinyminutes.com/docs/git/)
 3) [Git in 15 minutes](https://try.github.io)
 4) [GitHowTo](https://githowto.com/)
+5) [Learn GIT branching](https://learngitbranching.js.org)
 
 ## Other
 
