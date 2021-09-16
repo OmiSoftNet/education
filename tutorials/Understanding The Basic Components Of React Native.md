@@ -505,7 +505,6 @@ Example:
 
 ```jsx
 import React, {Component} from 'react';
-
 import {AppRegistry, StyleSheet, Text, ScrollView, View} from 'react-native';
 
 export default class NativeSample extends Component {
@@ -523,7 +522,7 @@ export default class NativeSample extends Component {
         {name: 'list5', id: 5},
         {name: 'list6', id: 6},
         {name: 'list7', id: 7},
-        {name: 'list8', id: 8}
+        {name: 'list8', id: 8},
         {name: 'list9', id: 9},
         {name: 'list10', id: 10},
         {name: 'list11', id: 11},
@@ -543,7 +542,6 @@ export default class NativeSample extends Component {
       <View
         style={{
           margin: 50,
-
           height: 500,
         }}>
         <Text>Scroll View</Text>
@@ -565,9 +563,136 @@ const styles = StyleSheet.create({
     borderWidth: 1,
   },
 });
+
 ```
 
 Result:
 
 ![scrollView example](https://habiletechnologies.com/wp-content/uploads/2017/02/screenshot_1487831144-199x337.png)
 
+#### 8. FlatList (List View)
+
+It is used to display the vertically scrolling list of changing data. It renders the dataSource array value to the view.
+
+- dataSource is a model to listView.
+- renderRow is used  to fetch the data from dataSource and render it to the view(screen)
+- rowHasChanged it determines the row change.
+
+Example:
+
+```jsx
+import React, {Component} from 'react';
+import {AppRegistry, Text, FlatList, View} from 'react-native';
+
+export default class NativeSample extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      dataSource: [
+        'row 1',
+        'row 2',
+        'row3',
+        'row4',
+        'row5',
+        'row6',
+        'row7',
+        'row8',
+      ],
+    };
+  }
+
+  render() {
+    return (
+      <View
+        style={{
+          margin: 50,
+          height: 500,
+        }}>
+        <Text>List View</Text>
+
+        <FlatList
+          data={this.state.dataSource}
+          renderItem={({item}) => <Text>{item}</Text>}
+        />
+      </View>
+    );
+  }
+}
+
+AppRegistry.registerComponent('NativeSample', () => NativeSample);
+```
+
+Result:
+
+![FlatList example](https://habiletechnologies.com/wp-content/uploads/2017/02/screenshot_1487831246-198x337.png)
+
+#### 9. Networking
+
+Most of the apps need to fetch data from remote URL. You maybe want to make POST
+a request or simply fetch the data from another server. React provides fetch
+function to make an HTTP request to another server. Catch the error throw by
+fetch otherwise dropped by silently
+
+Example:
+
+```jsx
+import React, {Component} from 'react';
+import {AppRegistry, StyleSheet, Text, ScrollView, View} from 'react-native';
+
+export default class NativeSample extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      firstVar: {movies: []},
+    };
+  }
+
+  hideText = () => {
+    fetch('https://facebook.github.io/react-native/movies.json')
+      .then(response => response.json())
+      .then(responseJson => {
+        this.setState({firstVar: responseJson});
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  };
+
+  makeList = item => {
+    <Text key={item.title} style={styles.list}>
+      {item.title}
+    </Text>;
+  };
+
+  render() {
+    return (
+      <View>
+        <Text onPress={this.hideText}>Click here to Fetch Data</Text>
+
+        <Text>{this.state.firstVar.title}</Text>
+
+        <Text>{this.state.firstVar.description} </Text>
+
+        <ScrollView>{this.state.firstVar.movies.map(this.makeList)}</ScrollView>
+      </View>
+    );
+  }
+}
+
+AppRegistry.registerComponent('NativeSample', () => NativeSample);
+
+const styles = StyleSheet.create({
+  list: {
+    margin: 15,
+    padding: 5,
+    height: 40,
+    borderColor: 'red',
+    borderWidth: 1,
+  },
+});
+```
+
+![Networking Example 1](https://habiletechnologies.com/wp-content/uploads/2017/02/fetch1.png)
+![Networking Example 2](https://habiletechnologies.com/wp-content/uploads/2017/02/fetch2.png)
