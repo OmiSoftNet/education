@@ -258,3 +258,316 @@ Example 1:
 
 *Inline style*
 
+```jsx
+import React, {Component} from 'react';
+import {AppRegistry, View, Text} from 'react-native';
+
+class NativeSample extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      firstVar: 'It displays using state',
+    };
+  }
+
+  render() {
+    return (
+      <View style={{backgroundColor: 'blue'}}>
+        <Text> {this.state.firstVar}</Text>
+      </View>
+    );
+  }
+}
+
+AppRegistry.registerComponent('NativeSample', () => NativeSample);
+```
+
+Example 2:
+
+*Using styleSheet*
+
+```jsx
+import React, {Component} from 'react';
+import {AppRegistry, StyleSheet, Text, View} from 'react-native';
+
+export default class NativeSample extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      firstVar: 'It displays using styleSheet',
+    };
+  }
+
+  render() {
+    return (
+      <View>
+        <Text style={styles.textStyle}> {this.state.firstVar}</Text>
+      </View>
+    );
+  }
+}
+
+AppRegistry.registerComponent('NativeSample', () => NativeSample);
+
+const styles = StyleSheet.create({
+  textStyle: {
+    margin: 50,
+    fontSize: 30,
+    color: 'red',
+    fontWeight: 'bold',
+  },
+});
+```
+
+Result:
+
+![styleSheet example](https://habiletechnologies.com/wp-content/uploads/2017/02/screenshot_1487830700-196x337.png)
+
+#### 5. Flex layout
+
+Flex Layout is provided to give a clean layout to the component. Children of a component layout are specified using the Flexbox. Using the flexDirection, alignItems, and justifyContent properties we can archive the right layout
+
+##### 5.1. flexDirection:
+
+Values: ('row', 'column')
+
+This property decides the primary axis of the layout. Component’s children should be organized
+
+Horizontally (row) or Vertically (column). Default value is column
+
+Example:
+
+```jsx
+import React, {Component} from 'react';
+
+import {AppRegistry, View} from 'react-native';
+
+export default class NativeSample extends Component {
+  render() {
+    return (
+      <View style={{flex: 1, flexDirection: 'row'}}>
+        <View style={{width: 50, height: 50, backgroundColor: 'blue'}} />
+
+        <View style={{width: 50, height: 50, backgroundColor: 'red'}} />
+
+        <View style={{width: 50, height: 50, backgroundColor: 'green'}} />
+      </View>
+    );
+  }
+}
+
+AppRegistry.registerComponent('NativeSample', () => NativeSample);
+```
+
+Result:
+
+![flexDirection Example](https://habiletechnologies.com/wp-content/uploads/2017/02/screenshot_1487830770.png)
+
+##### 5.2. justifyContent
+
+JustifyContent determines the distribution of children in primary Axis.
+
+Values:flex-start, center, flex-end, space-around, and space-between.
+
+Space-between provide an equal space between the children
+
+Example:
+
+```jsx
+import React, {Component} from 'react';
+import {AppRegistry, View} from 'react-native';
+
+export default class NativeSample extends Component {
+  render() {
+    return (
+      <View
+        style={{
+          flex: 1,
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+        }}>
+        <View style={{width: 50, height: 50, backgroundColor: 'blue'}} />
+
+        <View style={{width: 50, height: 50, backgroundColor: 'red'}} />
+
+        <View style={{width: 50, height: 50, backgroundColor: 'green'}} />
+      </View>
+    );
+  }
+}
+
+AppRegistry.registerComponent('NativeSample', () => NativeSample);
+```
+
+ Result:
+ 
+ ![justifyContent example](https://habiletechnologies.com/wp-content/uploads/2017/02/screenshot_1487830805.png)
+ 
+##### 5.3. alignItems
+
+alignItems determines the alignment of children in the secondary axis.
+
+Values : (flex-start, center, flex-end, strecth)
+
+- flex-start : align at the start
+- center : align at the center,
+- flex-end : lign at the end,
+- stretch : stretched to fill.
+
+Example:
+
+```jsx
+import React, {Component} from 'react';
+
+import {AppRegistry, View} from 'react-native';
+
+export default class NativeSample extends Component {
+  render() {
+    return (
+      <View
+        style={{
+          flex: 1,
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+
+          alignItems: 'center',
+        }}>
+        <View style={{width: 50, height: 50, backgroundColor: 'blue'}} />
+
+        <View style={{width: 50, height: 50, backgroundColor: 'red'}} />
+
+        <View style={{width: 50, height: 50, backgroundColor: 'green'}} />
+      </View>
+    );
+  }
+}
+
+AppRegistry.registerComponent('NativeSample', () => NativeSample);
+```
+
+Result:
+
+![alignItems example](https://habiletechnologies.com/wp-content/uploads/2017/02/screenshot_1487830841.png)
+
+#### 6. Handling text input
+
+We use the basic component TextInput to get text input from the user. It has props
+onChangeText, onSubmitEditing. onChangeText function is called whenever the text is changed.
+
+onSubmitEditing is invoked when the text is submitted.
+
+Example:
+
+```jsx
+import React, {Component} from 'react';
+
+import {AppRegistry, Text, TextInput, View} from 'react-native';
+
+export default class NativeSample extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      firstVar: ' ',
+    };
+  }
+
+  render() {
+    return (
+      <View style={{margin: 50}}>
+        <TextInput
+          style={{height: 40}}
+          placeholder="Type your text!"
+          onChangeText={firstVar => this.setState({firstVar})}
+        />
+
+        <Text style={{padding: 10, fontSize: 42}}>{this.state.firstVar}</Text>
+      </View>
+    );
+  }
+}
+
+AppRegistry.registerComponent('NativeSample', () => NativeSample);
+```
+
+Result:
+
+![Handling text input example](https://habiletechnologies.com/wp-content/uploads/2017/02/screenshot_1487830905-200x337.png)
+
+#### 7. scrollView
+
+Scrollview used to render the large list or large content in view with a scrollbar.
+It helps to view the large content.
+
+Example:
+
+```jsx
+import React, {Component} from 'react';
+
+import {AppRegistry, StyleSheet, Text, ScrollView, View} from 'react-native';
+
+export default class NativeSample extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      firstVar: ' ',
+
+      listvalue: [
+        {name: 'list1', id: 1},
+        {name: 'list2', id: 2},
+        {name: 'list3', id: 3},
+        {name: 'list4', id: 4},
+        {name: 'list5', id: 5},
+        {name: 'list6', id: 6},
+        {name: 'list7', id: 7},
+        {name: 'list8', id: 8}
+        {name: 'list9', id: 9},
+        {name: 'list10', id: 10},
+        {name: 'list11', id: 11},
+        {name: 'list12', id: 12},
+      ],
+    };
+  }
+
+  makeList = item => (
+    <Text key={item.id} style={styles.list}>
+      {item.name}
+    </Text>
+  );
+
+  render() {
+    return (
+      <View
+        style={{
+          margin: 50,
+
+          height: 500,
+        }}>
+        <Text>Scroll View</Text>
+
+        <ScrollView>{this.state.listvalue.map(this.makeList)}</ScrollView>
+      </View>
+    );
+  }
+}
+
+AppRegistry.registerComponent('NativeSample', () => NativeSample);
+
+const styles = StyleSheet.create({
+  list: {
+    margin: 15,
+    padding: 5,
+    height: 40,
+    borderColor: 'red',
+    borderWidth: 1,
+  },
+});
+```
+
+Result:
+
+![scrollView example](https://habiletechnologies.com/wp-content/uploads/2017/02/screenshot_1487831144-199x337.png)
+
