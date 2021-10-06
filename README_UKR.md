@@ -157,6 +157,10 @@
 
 1) [Відеокурс] [Відео курсів 7th Apiko Intensive (React, Mobx, React Native)](https://dou.ua/forums/topic/29892/) (ukr)
 
+### TypeScript
+
+1) [Перевод официальной документации Typescript на русский](http://typescript-lang.ru/docs/index.html) (rus)
+
 ### Node.js
 1) [Уроки Node JS и Express для начинающих](https://www.youtube.com/playlist?list=PL0lO_mIqDDFX0qH9w5YQIDV6Wxy0oawet) (rus)
 
