@@ -190,6 +190,7 @@
 5) [Git in 15 minutes](https://try.github.io) (eng)
 6) [Learn Git in X minutes](https://learnxinyminutes.com/docs/git/) (eng)
 7) [Learn GIT branching](https://learngitbranching.js.org/?locale=uk) (ukr)
+8) [Відеокурс] [GIT](https://www.youtube.com/watch?v=au1Tb0tEe6I&list=PL0k-9Y7O1GweYJHN0QfrW2rUjWxrszsg_) (rus)
 
 ## Scrum
 1) [SCRUM — метод управления проектами. Обучающий мультик](https://www.youtube.com/watch?v=BHhr1aMgKPk) (rus)
