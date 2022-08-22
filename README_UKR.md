@@ -142,6 +142,7 @@
 8) [Секреты JavaScript-кухни: специи](https://habr.com/company/ruvds/blog/415059/) (rus)
 9) [Learn RxJS](https://www.learnrxjs.io/) (eng)
 10) [Керівництво по стилю React/JSX від Airbnb](https://github.com/ivanzusko/javascript) (ukr)
+11) [Руководства, шпаргалки, вопросы и другие материалы по JavaScript](https://my-js.org/) (rus)
 
 ### ReactJS
 1) [Стаття] [Основы React: всё, что нужно знать для начала работы](https://habr.com/ru/company/ruvds/blog/343022/) (rus)
